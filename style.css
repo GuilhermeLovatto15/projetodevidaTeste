@@ -1,0 +1,151 @@
+/* Importa a fonte 'Chakra Petch' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+/* Definição de variáveis CSS para cores utilizadas no projeto */
+:root {
+    --cor-de-fundo: #1E1E1E; /* Cor de fundo principal */
+    --verde: #6FFF57; /* Cor verde usada para destaque */
+    --branco: #FFFFFF; /* Cor branca para o texto */
+    --botao-ativo: #3A375E; /* Cor de fundo do botão ativo */
+    --botao-inativo: rgba(58, 55, 94, 0.5); /* Cor de fundo do botão inativo */
+    --texto-fundo: rgba(58, 55, 94, 0.3); /* Cor de fundo da área de conteúdo */
+}
+
+/* Estilos gerais do corpo da página */
+body {
+    background-color: var(--cor-de-fundo); /* Aplica a cor de fundo definida na variável */
+    color: var(--branco); /* Define a cor do texto */
+    font-family: 'Chakra Petch', sans-serif; /* Aplica a fonte importada */
+}
+
+/* Estilização da seção principal do conteúdo */
+.conteudo-principal {
+    display: flex; /* Usa flexbox para alinhar os elementos */
+    flex-direction: column; /* Organiza os elementos em coluna */
+    justify-content: center; /* Centraliza os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    max-width: 1200px; /* Define uma largura máxima */
+    width: 100%; /* O conteúdo ocupa toda a largura disponível */
+    margin: 0 auto; /* Centraliza o conteúdo na tela */
+}
+
+/* Estilização do título principal */
+.titulo-principal {
+    text-align: left; /* Alinha o texto à esquerda */
+    width: 100%; /* O título ocupa toda a largura do contêiner */
+    font-size: 32px; /* Define o tamanho da fonte */
+}
+
+/* Destaca parte do título principal com a cor verde */
+.titulo-principal span {
+    color: var(--verde);
+}
+
+/* Estilos para os botões */
+.botao {
+    font-family: "Chakra Petch", sans-serif; /* Usa a fonte personalizada */
+    background-color: var(--botao-inativo); /* Define a cor do botão inativo */
+    color: var(--branco); /* Define a cor do texto */
+    display: flex; /* Usa flexbox para alinhar o conteúdo */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    padding: 1em; /* Adiciona espaçamento interno */
+    font-size: 18px; /* Define o tamanho da fonte */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* O botão ocupa toda a largura do contêiner */
+    border-bottom: 4px solid var(--botao-ativo); /* Borda inferior */
+    border-left: 2px solid var(--botao-ativo); /* Borda esquerda */
+    border-right: 2px solid var(--botao-ativo); /* Borda direita */
+    border-top: none; /* Remove a borda superior */
+}
+
+/* Arredonda os cantos superiores do primeiro botão */
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
+}
+
+/* Estilização do contêiner dos botões */
+.botoes {
+    display: block; /* Exibe os botões como blocos empilhados */
+}
+
+/* Estilização do botão ativo */
+.botao.ativo {
+    background-color: var(--botao-ativo); /* Muda a cor de fundo */
+    border-bottom: 4px solid var(--verde); /* Adiciona uma borda inferior verde */
+}
+
+/* Estilização da área de conteúdo das abas */
+.abas-textos {
+    background-color: var(--texto-fundo); /* Define a cor de fundo */
+    padding: 40px; /* Adiciona espaçamento interno */
+    border-radius: 0 0 40px 40px; /* Arredonda os cantos inferiores */
+}
+
+/* Exibe apenas a aba ativa */
+.aba-conteudo.ativo {
+    display: block;
+}
+
+/* Esconde as abas inativas */
+.aba-conteudo {
+    display: none;
+}
+
+/* Estilização do título principal dentro da aba de conteúdo */
+.aba-conteudo-titulo-principal {
+    font-size: 28px; /* Define o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilização do título secundário dentro da aba de conteúdo */
+.aba-conteudo-titulo-secundario {
+    text-align: center; /* Centraliza o texto */
+    color: var(--verde); /* Define a cor do texto */
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+}
+
+/* Estilo geral do contêiner do contador */
+.contador {
+    display: flex;              /* Usa flexbox para alinhar os elementos horizontalmente */
+    justify-content: center;    /* Centraliza os itens horizontalmente */
+    flex-wrap: wrap;            /* Permite que os itens quebrem linha, se necessário */
+}
+
+/* Estilo de cada "dígito" (unidade de tempo: dias, horas, minutos, segundos) */
+.contador-digito {
+    padding: 0 16px;            /* Espaçamento interno nas laterais */
+    text-align: center;         /* Centraliza o conteúdo dentro do bloco */
+    min-width: 100px;           /* Define uma largura mínima para manter a consistência */
+}
+
+/* Estilo do número do contador (ex: 12 dias) */
+.contador-digito-numero {
+    font-size: 80px;            /* Define um tamanho grande para destaque */
+    margin: 0;                  /* Remove margens padrão */
+}
+
+/* Estilo do texto que acompanha o número (ex: "dias", "horas") */
+.contador-digito-texto {
+    color: var(--verde);        /* Cor definida por variável (provavelmente verde) */
+    font-size: 20px;            /* Tamanho da fonte do texto complementar */
+    margin: 0;                  /* Remove margens padrão */
+}
+
+
+
+/* Estilos aplicados quando a tela for maior que 768px (responsividade) */
+@media screen and (min-width: 768px) {
+    .botoes {
+        display: flex; /* Exibe os botões lado a lado */
+    }
+
+    /* Ajusta os cantos arredondados do primeiro botão em telas maiores */
+    .botao:first-child {
+        border-radius: 40px 0 0 0;
+    }
+
+    /* Ajusta os cantos arredondados do último botão em telas maiores */
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
+    }
+}
